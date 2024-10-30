@@ -1,0 +1,1271 @@
+
+Drivers.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         000000bc  00000000  00000000  000000d4  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000000  00800060  00800060  0000071a  2**0
+                  ALLOC, LOAD, DATA
+  2 .comment      0000002f  00000000  00000000  0000071a  2**0
+                  CONTENTS, READONLY
+  3 .stack.descriptors.hdr 0000000e  00000000  00000000  00000749  2**0
+                  CONTENTS, READONLY
+  4 .debug_aranges 000000d0  00000000  00000000  00000757  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   000019f4  00000000  00000000  00000827  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 00000823  00000000  00000000  0000221b  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   00000716  00000000  00000000  00002a3e  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  0000028c  00000000  00000000  00003154  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    000001fd  00000000  00000000  000033e0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    00000ad8  00000000  00000000  000035dd  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 000000a0  00000000  00000000  000040b5  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .text         00000004  00000620  00000620  000006f4  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 13 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00004158  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 14 .text.Led_Toggle 0000000c  00000614  00000614  000006e8  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 15 .text.main    00000014  00000600  00000600  000006d4  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 16 .data.INT0_Pin 00000004  00800076  0000063e  00000712  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+ 17 .data.PORTC_Pin0 00000004  0080007a  00000642  00000716  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+ 18 .text.GPIO_Pin_Write 000000a4  00000328  00000328  000003fc  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 19 .text.GPIO_Pin_Init 00000190  000000bc  000000bc  00000190  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 20 .text.GPIO_Pin_Toggle 00000050  0000059a  0000059a  0000066e  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 21 .data.ddrRegister 00000008  00800060  0000062e  00000702  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+ 22 .data.portRegister 00000008  00800068  00000636  0000070a  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+ 23 .text.EXTI_Sense_Def 000000dc  0000024c  0000024c  00000320  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 24 .text.Configure_EXTI_Pin 0000005c  00000448  00000448  0000051c  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 25 .text.EXTI_Init 0000007c  000003cc  000003cc  000004a0  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 26 .text.__vector_1 00000052  000004a4  000004a4  00000578  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 27 .text.__vector_2 00000052  000004f6  000004f6  000005ca  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 28 .text.__vector_3 00000052  00000548  00000548  0000061c  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 29 .bss.EXTI_Fun 00000006  00800070  00800070  0000071a  2**0
+                  ALLOC
+ 30 .text.__dummy_fini 00000002  00000628  00000628  000006fc  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 31 .text.__dummy_funcs_on_exit 00000002  0000062a  0000062a  000006fe  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 32 .text.__dummy_simulator_exit 00000002  0000062c  0000062c  00000700  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 33 .text.exit    00000016  000005ea  000005ea  000006be  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 34 .text._Exit   00000004  00000624  00000624  000006f8  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 34 00 	jmp	0x68	; 0x68 <__ctors_end>
+   4:	0c 94 52 02 	jmp	0x4a4	; 0x4a4 <__vector_1>
+   8:	0c 94 7b 02 	jmp	0x4f6	; 0x4f6 <__vector_2>
+   c:	0c 94 a4 02 	jmp	0x548	; 0x548 <__vector_3>
+  10:	0c 94 10 03 	jmp	0x620	; 0x620 <__bad_interrupt>
+  14:	0c 94 10 03 	jmp	0x620	; 0x620 <__bad_interrupt>
+  18:	0c 94 10 03 	jmp	0x620	; 0x620 <__bad_interrupt>
+  1c:	0c 94 10 03 	jmp	0x620	; 0x620 <__bad_interrupt>
+  20:	0c 94 10 03 	jmp	0x620	; 0x620 <__bad_interrupt>
+  24:	0c 94 10 03 	jmp	0x620	; 0x620 <__bad_interrupt>
+  28:	0c 94 10 03 	jmp	0x620	; 0x620 <__bad_interrupt>
+  2c:	0c 94 10 03 	jmp	0x620	; 0x620 <__bad_interrupt>
+  30:	0c 94 10 03 	jmp	0x620	; 0x620 <__bad_interrupt>
+  34:	0c 94 10 03 	jmp	0x620	; 0x620 <__bad_interrupt>
+  38:	0c 94 10 03 	jmp	0x620	; 0x620 <__bad_interrupt>
+  3c:	0c 94 10 03 	jmp	0x620	; 0x620 <__bad_interrupt>
+  40:	0c 94 10 03 	jmp	0x620	; 0x620 <__bad_interrupt>
+  44:	0c 94 10 03 	jmp	0x620	; 0x620 <__bad_interrupt>
+  48:	0c 94 10 03 	jmp	0x620	; 0x620 <__bad_interrupt>
+  4c:	0c 94 10 03 	jmp	0x620	; 0x620 <__bad_interrupt>
+  50:	0c 94 10 03 	jmp	0x620	; 0x620 <__bad_interrupt>
+
+00000054 <.dinit>:
+  54:	00 60       	ori	r16, 0x00	; 0
+  56:	00 70       	andi	r16, 0x00	; 0
+  58:	00 06       	cpc	r0, r16
+  5a:	2e 00       	.word	0x002e	; ????
+  5c:	70 00       	.word	0x0070	; ????
+  5e:	76 80       	ldd	r7, Z+6	; 0x06
+  60:	00 76       	andi	r16, 0x60	; 96
+  62:	00 7e       	andi	r16, 0xE0	; 224
+  64:	00 06       	cpc	r0, r16
+  66:	3e 00       	.word	0x003e	; ????
+
+00000068 <__ctors_end>:
+  68:	11 24       	eor	r1, r1
+  6a:	1f be       	out	0x3f, r1	; 63
+  6c:	cf e5       	ldi	r28, 0x5F	; 95
+  6e:	d8 e0       	ldi	r29, 0x08	; 8
+  70:	de bf       	out	0x3e, r29	; 62
+  72:	cd bf       	out	0x3d, r28	; 61
+
+00000074 <__do_copy_data>:
+  74:	e4 e5       	ldi	r30, 0x54	; 84
+  76:	f0 e0       	ldi	r31, 0x00	; 0
+  78:	40 e0       	ldi	r20, 0x00	; 0
+  7a:	17 c0       	rjmp	.+46     	; 0xaa <__do_clear_bss+0x8>
+  7c:	b5 91       	lpm	r27, Z+
+  7e:	a5 91       	lpm	r26, Z+
+  80:	35 91       	lpm	r19, Z+
+  82:	25 91       	lpm	r18, Z+
+  84:	05 91       	lpm	r16, Z+
+  86:	07 fd       	sbrc	r16, 7
+  88:	0c c0       	rjmp	.+24     	; 0xa2 <__do_clear_bss>
+  8a:	95 91       	lpm	r25, Z+
+  8c:	85 91       	lpm	r24, Z+
+  8e:	ef 01       	movw	r28, r30
+  90:	f9 2f       	mov	r31, r25
+  92:	e8 2f       	mov	r30, r24
+  94:	05 90       	lpm	r0, Z+
+  96:	0d 92       	st	X+, r0
+  98:	a2 17       	cp	r26, r18
+  9a:	b3 07       	cpc	r27, r19
+  9c:	d9 f7       	brne	.-10     	; 0x94 <__do_copy_data+0x20>
+  9e:	fe 01       	movw	r30, r28
+  a0:	04 c0       	rjmp	.+8      	; 0xaa <__do_clear_bss+0x8>
+
+000000a2 <__do_clear_bss>:
+  a2:	1d 92       	st	X+, r1
+  a4:	a2 17       	cp	r26, r18
+  a6:	b3 07       	cpc	r27, r19
+  a8:	e1 f7       	brne	.-8      	; 0xa2 <__do_clear_bss>
+  aa:	e7 36       	cpi	r30, 0x67	; 103
+  ac:	f4 07       	cpc	r31, r20
+  ae:	31 f7       	brne	.-52     	; 0x7c <__do_copy_data+0x8>
+  b0:	0e 94 00 03 	call	0x600	; 0x600 <main>
+  b4:	0c 94 f5 02 	jmp	0x5ea	; 0x5ea <exit>
+
+000000b8 <_exit>:
+  b8:	f8 94       	cli
+
+000000ba <__stop_program>:
+  ba:	ff cf       	rjmp	.-2      	; 0xba <__stop_program>
+
+Disassembly of section .text:
+
+00000620 <__bad_interrupt>:
+ 620:	0c 94 00 00 	jmp	0	; 0x0 <__TEXT_REGION_ORIGIN__>
+
+Disassembly of section .text.Led_Toggle:
+
+00000614 <Led_Toggle>:
+    }
+}
+
+void Led_Toggle()
+{
+	GPIO_Pin_Toggle(&PORTC_Pin0);
+ 614:	6a e7       	ldi	r22, 0x7A	; 122
+ 616:	70 e0       	ldi	r23, 0x00	; 0
+ 618:	80 e8       	ldi	r24, 0x80	; 128
+ 61a:	0e 94 cd 02 	call	0x59a	; 0x59a <GPIO_Pin_Toggle>
+ 61e:	08 95       	ret
+
+Disassembly of section .text.main:
+
+00000600 <main>:
+	.EXT_InterruptHandler = &Led_Toggle,
+};
+
+int main(void)
+{
+	GPIO_Pin_Init(&PORTC_Pin0);
+ 600:	6a e7       	ldi	r22, 0x7A	; 122
+ 602:	70 e0       	ldi	r23, 0x00	; 0
+ 604:	80 e8       	ldi	r24, 0x80	; 128
+ 606:	0e 94 5e 00 	call	0xbc	; 0xbc <__data_load_end>
+	EXTI_Init(&INT0_Pin);
+ 60a:	86 e7       	ldi	r24, 0x76	; 118
+ 60c:	90 e0       	ldi	r25, 0x00	; 0
+ 60e:	0e 94 e6 01 	call	0x3cc	; 0x3cc <EXTI_Init>
+ 612:	ff cf       	rjmp	.-2      	; 0x612 <main+0x12>
+
+Disassembly of section .text.GPIO_Pin_Write:
+
+00000328 <GPIO_Pin_Write>:
+	}
+	return RetVal;
+}
+
+STD_RET GPIO_Pin_Write(const Pin_Config * pin_t, uint8 PinState)
+{
+ 328:	cf 92       	push	r12
+ 32a:	df 92       	push	r13
+ 32c:	ef 92       	push	r14
+ 32e:	6b 01       	movw	r12, r22
+ 330:	e8 2e       	mov	r14, r24
+	STD_RET RetVal = E_NOK;
+	if(NULL == pin_t)
+ 332:	61 15       	cp	r22, r1
+ 334:	71 05       	cpc	r23, r1
+ 336:	81 05       	cpc	r24, r1
+ 338:	09 f4       	brne	.+2      	; 0x33c <GPIO_Pin_Write+0x14>
+ 33a:	43 c0       	rjmp	.+134    	; 0x3c2 <GPIO_Pin_Write+0x9a>
+	{
+		RetVal = E_NULL_PTR;
+	}
+	else
+	{
+		if(PinState == GPIO_HIGH)
+ 33c:	41 30       	cpi	r20, 0x01	; 1
+ 33e:	01 f5       	brne	.+64     	; 0x380 <GPIO_Pin_Write+0x58>
+		{
+			SET_BIT(*portRegister[pin_t->port], pin_t->pin);
+ 340:	a8 2f       	mov	r26, r24
+ 342:	cb 01       	movw	r24, r22
+ 344:	01 96       	adiw	r24, 0x01	; 1
+ 346:	a1 1d       	adc	r26, r1
+ 348:	fc 01       	movw	r30, r24
+ 34a:	84 91       	lpm	r24, Z
+ 34c:	a7 fd       	sbrc	r26, 7
+ 34e:	80 81       	ld	r24, Z
+ 350:	e8 2f       	mov	r30, r24
+ 352:	f0 e0       	ldi	r31, 0x00	; 0
+ 354:	ee 0f       	add	r30, r30
+ 356:	ff 1f       	adc	r31, r31
+ 358:	e8 59       	subi	r30, 0x98	; 152
+ 35a:	ff 4f       	sbci	r31, 0xFF	; 255
+ 35c:	a0 81       	ld	r26, Z
+ 35e:	b1 81       	ldd	r27, Z+1	; 0x01
+ 360:	2c 91       	ld	r18, X
+ 362:	f6 01       	movw	r30, r12
+ 364:	34 91       	lpm	r19, Z
+ 366:	e7 fc       	sbrc	r14, 7
+ 368:	30 81       	ld	r19, Z
+ 36a:	81 e0       	ldi	r24, 0x01	; 1
+ 36c:	90 e0       	ldi	r25, 0x00	; 0
+ 36e:	02 c0       	rjmp	.+4      	; 0x374 <GPIO_Pin_Write+0x4c>
+ 370:	88 0f       	add	r24, r24
+ 372:	99 1f       	adc	r25, r25
+ 374:	3a 95       	dec	r19
+ 376:	e2 f7       	brpl	.-8      	; 0x370 <GPIO_Pin_Write+0x48>
+ 378:	82 2b       	or	r24, r18
+ 37a:	8c 93       	st	X, r24
+		}
+		else
+		{
+			CLR_BIT(*portRegister[pin_t->port], pin_t->pin);
+		}
+		RetVal = E_OK;
+ 37c:	81 e0       	ldi	r24, 0x01	; 1
+ 37e:	22 c0       	rjmp	.+68     	; 0x3c4 <GPIO_Pin_Write+0x9c>
+		{
+			SET_BIT(*portRegister[pin_t->port], pin_t->pin);
+		}
+		else
+		{
+			CLR_BIT(*portRegister[pin_t->port], pin_t->pin);
+ 380:	a8 2f       	mov	r26, r24
+ 382:	cb 01       	movw	r24, r22
+ 384:	01 96       	adiw	r24, 0x01	; 1
+ 386:	a1 1d       	adc	r26, r1
+ 388:	fc 01       	movw	r30, r24
+ 38a:	84 91       	lpm	r24, Z
+ 38c:	a7 fd       	sbrc	r26, 7
+ 38e:	80 81       	ld	r24, Z
+ 390:	e8 2f       	mov	r30, r24
+ 392:	f0 e0       	ldi	r31, 0x00	; 0
+ 394:	ee 0f       	add	r30, r30
+ 396:	ff 1f       	adc	r31, r31
+ 398:	e8 59       	subi	r30, 0x98	; 152
+ 39a:	ff 4f       	sbci	r31, 0xFF	; 255
+ 39c:	a0 81       	ld	r26, Z
+ 39e:	b1 81       	ldd	r27, Z+1	; 0x01
+ 3a0:	2c 91       	ld	r18, X
+ 3a2:	f6 01       	movw	r30, r12
+ 3a4:	34 91       	lpm	r19, Z
+ 3a6:	e7 fc       	sbrc	r14, 7
+ 3a8:	30 81       	ld	r19, Z
+ 3aa:	81 e0       	ldi	r24, 0x01	; 1
+ 3ac:	90 e0       	ldi	r25, 0x00	; 0
+ 3ae:	02 c0       	rjmp	.+4      	; 0x3b4 <GPIO_Pin_Write+0x8c>
+ 3b0:	88 0f       	add	r24, r24
+ 3b2:	99 1f       	adc	r25, r25
+ 3b4:	3a 95       	dec	r19
+ 3b6:	e2 f7       	brpl	.-8      	; 0x3b0 <GPIO_Pin_Write+0x88>
+ 3b8:	80 95       	com	r24
+ 3ba:	82 23       	and	r24, r18
+ 3bc:	8c 93       	st	X, r24
+		}
+		RetVal = E_OK;
+ 3be:	81 e0       	ldi	r24, 0x01	; 1
+ 3c0:	01 c0       	rjmp	.+2      	; 0x3c4 <GPIO_Pin_Write+0x9c>
+STD_RET GPIO_Pin_Write(const Pin_Config * pin_t, uint8 PinState)
+{
+	STD_RET RetVal = E_NOK;
+	if(NULL == pin_t)
+	{
+		RetVal = E_NULL_PTR;
+ 3c2:	82 e0       	ldi	r24, 0x02	; 2
+			CLR_BIT(*portRegister[pin_t->port], pin_t->pin);
+		}
+		RetVal = E_OK;
+	}
+	return RetVal;	
+}
+ 3c4:	ef 90       	pop	r14
+ 3c6:	df 90       	pop	r13
+ 3c8:	cf 90       	pop	r12
+ 3ca:	08 95       	ret
+
+Disassembly of section .text.GPIO_Pin_Init:
+
+000000bc <GPIO_Pin_Init>:
+	{
+		*PinState = GET_BIT(*pinRegister[pin_t->port], pin_t->pin);
+		RetVal = E_OK;
+	}
+	return RetVal;
+}
+  bc:	cf 92       	push	r12
+  be:	df 92       	push	r13
+  c0:	ef 92       	push	r14
+  c2:	cf 93       	push	r28
+  c4:	df 93       	push	r29
+  c6:	a8 2f       	mov	r26, r24
+  c8:	cb 01       	movw	r24, r22
+  ca:	00 97       	sbiw	r24, 0x00	; 0
+  cc:	a1 05       	cpc	r26, r1
+  ce:	09 f4       	brne	.+2      	; 0xd2 <GPIO_Pin_Init+0x16>
+  d0:	b4 c0       	rjmp	.+360    	; 0x23a <GPIO_Pin_Init+0x17e>
+  d2:	9c 01       	movw	r18, r24
+  d4:	4a 2f       	mov	r20, r26
+  d6:	2e 5f       	subi	r18, 0xFE	; 254
+  d8:	3f 4f       	sbci	r19, 0xFF	; 255
+  da:	4f 4f       	sbci	r20, 0xFF	; 255
+  dc:	f9 01       	movw	r30, r18
+  de:	24 91       	lpm	r18, Z
+  e0:	47 fd       	sbrc	r20, 7
+  e2:	20 81       	ld	r18, Z
+  e4:	21 30       	cpi	r18, 0x01	; 1
+  e6:	61 f5       	brne	.+88     	; 0x140 <GPIO_Pin_Init+0x84>
+  e8:	6c 01       	movw	r12, r24
+  ea:	ea 2e       	mov	r14, r26
+  ec:	01 96       	adiw	r24, 0x01	; 1
+  ee:	a1 1d       	adc	r26, r1
+  f0:	fc 01       	movw	r30, r24
+  f2:	94 91       	lpm	r25, Z
+  f4:	a7 fd       	sbrc	r26, 7
+  f6:	90 81       	ld	r25, Z
+  f8:	e9 2f       	mov	r30, r25
+  fa:	f0 e0       	ldi	r31, 0x00	; 0
+  fc:	ee 0f       	add	r30, r30
+  fe:	ff 1f       	adc	r31, r31
+ 100:	e0 5a       	subi	r30, 0xA0	; 160
+ 102:	ff 4f       	sbci	r31, 0xFF	; 255
+ 104:	a0 81       	ld	r26, Z
+ 106:	b1 81       	ldd	r27, Z+1	; 0x01
+ 108:	2c 91       	ld	r18, X
+ 10a:	f6 01       	movw	r30, r12
+ 10c:	34 91       	lpm	r19, Z
+ 10e:	e7 fc       	sbrc	r14, 7
+ 110:	30 81       	ld	r19, Z
+ 112:	81 e0       	ldi	r24, 0x01	; 1
+ 114:	90 e0       	ldi	r25, 0x00	; 0
+ 116:	02 c0       	rjmp	.+4      	; 0x11c <GPIO_Pin_Init+0x60>
+ 118:	88 0f       	add	r24, r24
+ 11a:	99 1f       	adc	r25, r25
+ 11c:	3a 95       	dec	r19
+ 11e:	e2 f7       	brpl	.-8      	; 0x118 <GPIO_Pin_Init+0x5c>
+ 120:	82 2b       	or	r24, r18
+ 122:	8c 93       	st	X, r24
+ 124:	ae 2d       	mov	r26, r14
+ 126:	c6 01       	movw	r24, r12
+ 128:	03 96       	adiw	r24, 0x03	; 3
+ 12a:	a1 1d       	adc	r26, r1
+ 12c:	fc 01       	movw	r30, r24
+ 12e:	44 91       	lpm	r20, Z
+ 130:	a7 fd       	sbrc	r26, 7
+ 132:	40 81       	ld	r20, Z
+ 134:	8e 2d       	mov	r24, r14
+ 136:	b6 01       	movw	r22, r12
+ 138:	0e 94 94 01 	call	0x328	; 0x328 <GPIO_Pin_Write>
+ 13c:	81 e0       	ldi	r24, 0x01	; 1
+ 13e:	80 c0       	rjmp	.+256    	; 0x240 <GPIO_Pin_Init+0x184>
+ 140:	21 11       	cpse	r18, r1
+ 142:	3d c0       	rjmp	.+122    	; 0x1be <GPIO_Pin_Init+0x102>
+ 144:	6c 01       	movw	r12, r24
+ 146:	ea 2e       	mov	r14, r26
+ 148:	2f ef       	ldi	r18, 0xFF	; 255
+ 14a:	c2 1a       	sub	r12, r18
+ 14c:	d2 0a       	sbc	r13, r18
+ 14e:	e2 0a       	sbc	r14, r18
+ 150:	f6 01       	movw	r30, r12
+ 152:	24 91       	lpm	r18, Z
+ 154:	e7 fc       	sbrc	r14, 7
+ 156:	20 81       	ld	r18, Z
+ 158:	e2 2f       	mov	r30, r18
+ 15a:	f0 e0       	ldi	r31, 0x00	; 0
+ 15c:	ee 0f       	add	r30, r30
+ 15e:	ff 1f       	adc	r31, r31
+ 160:	e0 5a       	subi	r30, 0xA0	; 160
+ 162:	ff 4f       	sbci	r31, 0xFF	; 255
+ 164:	c0 81       	ld	r28, Z
+ 166:	d1 81       	ldd	r29, Z+1	; 0x01
+ 168:	28 81       	ld	r18, Y
+ 16a:	fc 01       	movw	r30, r24
+ 16c:	34 91       	lpm	r19, Z
+ 16e:	a7 fd       	sbrc	r26, 7
+ 170:	30 81       	ld	r19, Z
+ 172:	41 e0       	ldi	r20, 0x01	; 1
+ 174:	50 e0       	ldi	r21, 0x00	; 0
+ 176:	ba 01       	movw	r22, r20
+ 178:	02 c0       	rjmp	.+4      	; 0x17e <GPIO_Pin_Init+0xc2>
+ 17a:	66 0f       	add	r22, r22
+ 17c:	77 1f       	adc	r23, r23
+ 17e:	3a 95       	dec	r19
+ 180:	e2 f7       	brpl	.-8      	; 0x17a <GPIO_Pin_Init+0xbe>
+ 182:	60 95       	com	r22
+ 184:	26 23       	and	r18, r22
+ 186:	28 83       	st	Y, r18
+ 188:	f6 01       	movw	r30, r12
+ 18a:	24 91       	lpm	r18, Z
+ 18c:	e7 fc       	sbrc	r14, 7
+ 18e:	20 81       	ld	r18, Z
+ 190:	e2 2f       	mov	r30, r18
+ 192:	f0 e0       	ldi	r31, 0x00	; 0
+ 194:	ee 0f       	add	r30, r30
+ 196:	ff 1f       	adc	r31, r31
+ 198:	e8 59       	subi	r30, 0x98	; 152
+ 19a:	ff 4f       	sbci	r31, 0xFF	; 255
+ 19c:	c0 81       	ld	r28, Z
+ 19e:	d1 81       	ldd	r29, Z+1	; 0x01
+ 1a0:	28 81       	ld	r18, Y
+ 1a2:	fc 01       	movw	r30, r24
+ 1a4:	84 91       	lpm	r24, Z
+ 1a6:	a7 fd       	sbrc	r26, 7
+ 1a8:	80 81       	ld	r24, Z
+ 1aa:	02 c0       	rjmp	.+4      	; 0x1b0 <GPIO_Pin_Init+0xf4>
+ 1ac:	44 0f       	add	r20, r20
+ 1ae:	55 1f       	adc	r21, r21
+ 1b0:	8a 95       	dec	r24
+ 1b2:	e2 f7       	brpl	.-8      	; 0x1ac <GPIO_Pin_Init+0xf0>
+ 1b4:	40 95       	com	r20
+ 1b6:	42 23       	and	r20, r18
+ 1b8:	48 83       	st	Y, r20
+ 1ba:	81 e0       	ldi	r24, 0x01	; 1
+ 1bc:	41 c0       	rjmp	.+130    	; 0x240 <GPIO_Pin_Init+0x184>
+ 1be:	21 11       	cpse	r18, r1
+ 1c0:	3e c0       	rjmp	.+124    	; 0x23e <GPIO_Pin_Init+0x182>
+ 1c2:	6c 01       	movw	r12, r24
+ 1c4:	ea 2e       	mov	r14, r26
+ 1c6:	2f ef       	ldi	r18, 0xFF	; 255
+ 1c8:	c2 1a       	sub	r12, r18
+ 1ca:	d2 0a       	sbc	r13, r18
+ 1cc:	e2 0a       	sbc	r14, r18
+ 1ce:	f6 01       	movw	r30, r12
+ 1d0:	24 91       	lpm	r18, Z
+ 1d2:	e7 fc       	sbrc	r14, 7
+ 1d4:	20 81       	ld	r18, Z
+ 1d6:	e2 2f       	mov	r30, r18
+ 1d8:	f0 e0       	ldi	r31, 0x00	; 0
+ 1da:	ee 0f       	add	r30, r30
+ 1dc:	ff 1f       	adc	r31, r31
+ 1de:	e0 5a       	subi	r30, 0xA0	; 160
+ 1e0:	ff 4f       	sbci	r31, 0xFF	; 255
+ 1e2:	c0 81       	ld	r28, Z
+ 1e4:	d1 81       	ldd	r29, Z+1	; 0x01
+ 1e6:	28 81       	ld	r18, Y
+ 1e8:	fc 01       	movw	r30, r24
+ 1ea:	34 91       	lpm	r19, Z
+ 1ec:	a7 fd       	sbrc	r26, 7
+ 1ee:	30 81       	ld	r19, Z
+ 1f0:	41 e0       	ldi	r20, 0x01	; 1
+ 1f2:	50 e0       	ldi	r21, 0x00	; 0
+ 1f4:	ba 01       	movw	r22, r20
+ 1f6:	02 c0       	rjmp	.+4      	; 0x1fc <GPIO_Pin_Init+0x140>
+ 1f8:	66 0f       	add	r22, r22
+ 1fa:	77 1f       	adc	r23, r23
+ 1fc:	3a 95       	dec	r19
+ 1fe:	e2 f7       	brpl	.-8      	; 0x1f8 <GPIO_Pin_Init+0x13c>
+ 200:	60 95       	com	r22
+ 202:	26 23       	and	r18, r22
+ 204:	28 83       	st	Y, r18
+ 206:	f6 01       	movw	r30, r12
+ 208:	24 91       	lpm	r18, Z
+ 20a:	e7 fc       	sbrc	r14, 7
+ 20c:	20 81       	ld	r18, Z
+ 20e:	e2 2f       	mov	r30, r18
+ 210:	f0 e0       	ldi	r31, 0x00	; 0
+ 212:	ee 0f       	add	r30, r30
+ 214:	ff 1f       	adc	r31, r31
+ 216:	e8 59       	subi	r30, 0x98	; 152
+ 218:	ff 4f       	sbci	r31, 0xFF	; 255
+ 21a:	c0 81       	ld	r28, Z
+ 21c:	d1 81       	ldd	r29, Z+1	; 0x01
+ 21e:	28 81       	ld	r18, Y
+ 220:	fc 01       	movw	r30, r24
+ 222:	84 91       	lpm	r24, Z
+ 224:	a7 fd       	sbrc	r26, 7
+ 226:	80 81       	ld	r24, Z
+ 228:	02 c0       	rjmp	.+4      	; 0x22e <GPIO_Pin_Init+0x172>
+ 22a:	44 0f       	add	r20, r20
+ 22c:	55 1f       	adc	r21, r21
+ 22e:	8a 95       	dec	r24
+ 230:	e2 f7       	brpl	.-8      	; 0x22a <GPIO_Pin_Init+0x16e>
+ 232:	42 2b       	or	r20, r18
+ 234:	48 83       	st	Y, r20
+ 236:	81 e0       	ldi	r24, 0x01	; 1
+ 238:	03 c0       	rjmp	.+6      	; 0x240 <GPIO_Pin_Init+0x184>
+ 23a:	82 e0       	ldi	r24, 0x02	; 2
+ 23c:	01 c0       	rjmp	.+2      	; 0x240 <GPIO_Pin_Init+0x184>
+ 23e:	80 e0       	ldi	r24, 0x00	; 0
+ 240:	df 91       	pop	r29
+ 242:	cf 91       	pop	r28
+ 244:	ef 90       	pop	r14
+ 246:	df 90       	pop	r13
+ 248:	cf 90       	pop	r12
+ 24a:	08 95       	ret
+
+Disassembly of section .text.GPIO_Pin_Toggle:
+
+0000059a <GPIO_Pin_Toggle>:
+		RetVal = E_OK;
+	}
+	return RetVal;	
+}
+STD_RET GPIO_Pin_Toggle(const Pin_Config * pin_t)
+{
+ 59a:	9b 01       	movw	r18, r22
+ 59c:	48 2f       	mov	r20, r24
+	STD_RET RetVal = E_NOK;
+	if(NULL == pin_t)
+ 59e:	61 15       	cp	r22, r1
+ 5a0:	71 05       	cpc	r23, r1
+ 5a2:	81 05       	cpc	r24, r1
+ 5a4:	01 f1       	breq	.+64     	; 0x5e6 <GPIO_Pin_Toggle+0x4c>
+	{
+		RetVal = E_NULL_PTR;
+	}
+	else
+	{
+		TOGGLE_BIT(*portRegister[pin_t->port], pin_t->pin);
+ 5a6:	a8 2f       	mov	r26, r24
+ 5a8:	cb 01       	movw	r24, r22
+ 5aa:	01 96       	adiw	r24, 0x01	; 1
+ 5ac:	a1 1d       	adc	r26, r1
+ 5ae:	fc 01       	movw	r30, r24
+ 5b0:	84 91       	lpm	r24, Z
+ 5b2:	a7 fd       	sbrc	r26, 7
+ 5b4:	80 81       	ld	r24, Z
+ 5b6:	e8 2f       	mov	r30, r24
+ 5b8:	f0 e0       	ldi	r31, 0x00	; 0
+ 5ba:	ee 0f       	add	r30, r30
+ 5bc:	ff 1f       	adc	r31, r31
+ 5be:	e8 59       	subi	r30, 0x98	; 152
+ 5c0:	ff 4f       	sbci	r31, 0xFF	; 255
+ 5c2:	a0 81       	ld	r26, Z
+ 5c4:	b1 81       	ldd	r27, Z+1	; 0x01
+ 5c6:	5c 91       	ld	r21, X
+ 5c8:	f9 01       	movw	r30, r18
+ 5ca:	24 91       	lpm	r18, Z
+ 5cc:	47 fd       	sbrc	r20, 7
+ 5ce:	20 81       	ld	r18, Z
+ 5d0:	81 e0       	ldi	r24, 0x01	; 1
+ 5d2:	90 e0       	ldi	r25, 0x00	; 0
+ 5d4:	02 c0       	rjmp	.+4      	; 0x5da <GPIO_Pin_Toggle+0x40>
+ 5d6:	88 0f       	add	r24, r24
+ 5d8:	99 1f       	adc	r25, r25
+ 5da:	2a 95       	dec	r18
+ 5dc:	e2 f7       	brpl	.-8      	; 0x5d6 <GPIO_Pin_Toggle+0x3c>
+ 5de:	85 27       	eor	r24, r21
+ 5e0:	8c 93       	st	X, r24
+		RetVal = E_OK;
+ 5e2:	81 e0       	ldi	r24, 0x01	; 1
+ 5e4:	08 95       	ret
+STD_RET GPIO_Pin_Toggle(const Pin_Config * pin_t)
+{
+	STD_RET RetVal = E_NOK;
+	if(NULL == pin_t)
+	{
+		RetVal = E_NULL_PTR;
+ 5e6:	82 e0       	ldi	r24, 0x02	; 2
+	{
+		TOGGLE_BIT(*portRegister[pin_t->port], pin_t->pin);
+		RetVal = E_OK;
+	}
+	return RetVal;	
+}
+ 5e8:	08 95       	ret
+
+Disassembly of section .text.EXTI_Sense_Def:
+
+0000024c <EXTI_Sense_Def>:
+// Function to define the external interrupt sense control
+static STD_RET EXTI_Sense_Def(EXTI_INTx_t pin, EXTI_SENSE sense)
+{
+	STD_RET RetVal = E_NOK;
+
+	switch(pin)
+ 24c:	81 30       	cpi	r24, 0x01	; 1
+ 24e:	69 f1       	breq	.+90     	; 0x2aa <EXTI_Sense_Def+0x5e>
+ 250:	20 f0       	brcs	.+8      	; 0x25a <EXTI_Sense_Def+0xe>
+ 252:	82 30       	cpi	r24, 0x02	; 2
+ 254:	09 f4       	brne	.+2      	; 0x258 <EXTI_Sense_Def+0xc>
+ 256:	51 c0       	rjmp	.+162    	; 0x2fa <EXTI_Sense_Def+0xae>
+ 258:	5f c0       	rjmp	.+190    	; 0x318 <EXTI_Sense_Def+0xcc>
+	{
+		case EXTI_INT0:
+			RetVal = E_OK;
+			switch (sense)
+ 25a:	61 30       	cpi	r22, 0x01	; 1
+ 25c:	71 f0       	breq	.+28     	; 0x27a <EXTI_Sense_Def+0x2e>
+ 25e:	28 f0       	brcs	.+10     	; 0x26a <EXTI_Sense_Def+0x1e>
+ 260:	62 30       	cpi	r22, 0x02	; 2
+ 262:	99 f0       	breq	.+38     	; 0x28a <EXTI_Sense_Def+0x3e>
+ 264:	63 30       	cpi	r22, 0x03	; 3
+ 266:	c9 f0       	breq	.+50     	; 0x29a <EXTI_Sense_Def+0x4e>
+ 268:	59 c0       	rjmp	.+178    	; 0x31c <EXTI_Sense_Def+0xd0>
+			{
+				case LOW_LEVEL:    CLR_BIT(*MCUCR, ISC00); CLR_BIT(*MCUCR, ISC01); break;
+ 26a:	85 b7       	in	r24, 0x35	; 53
+ 26c:	8e 7f       	andi	r24, 0xFE	; 254
+ 26e:	85 bf       	out	0x35, r24	; 53
+ 270:	85 b7       	in	r24, 0x35	; 53
+ 272:	8d 7f       	andi	r24, 0xFD	; 253
+ 274:	85 bf       	out	0x35, r24	; 53
+	STD_RET RetVal = E_NOK;
+
+	switch(pin)
+	{
+		case EXTI_INT0:
+			RetVal = E_OK;
+ 276:	81 e0       	ldi	r24, 0x01	; 1
+			switch (sense)
+			{
+				case LOW_LEVEL:    CLR_BIT(*MCUCR, ISC00); CLR_BIT(*MCUCR, ISC01); break;
+ 278:	08 95       	ret
+				case ON_CHANGE:    SET_BIT(*MCUCR, ISC00); CLR_BIT(*MCUCR, ISC01); break;
+ 27a:	85 b7       	in	r24, 0x35	; 53
+ 27c:	81 60       	ori	r24, 0x01	; 1
+ 27e:	85 bf       	out	0x35, r24	; 53
+ 280:	85 b7       	in	r24, 0x35	; 53
+ 282:	8d 7f       	andi	r24, 0xFD	; 253
+ 284:	85 bf       	out	0x35, r24	; 53
+	STD_RET RetVal = E_NOK;
+
+	switch(pin)
+	{
+		case EXTI_INT0:
+			RetVal = E_OK;
+ 286:	81 e0       	ldi	r24, 0x01	; 1
+			switch (sense)
+			{
+				case LOW_LEVEL:    CLR_BIT(*MCUCR, ISC00); CLR_BIT(*MCUCR, ISC01); break;
+				case ON_CHANGE:    SET_BIT(*MCUCR, ISC00); CLR_BIT(*MCUCR, ISC01); break;
+ 288:	08 95       	ret
+				case FALLING_EDGE: CLR_BIT(*MCUCR, ISC00); SET_BIT(*MCUCR, ISC01); break;
+ 28a:	85 b7       	in	r24, 0x35	; 53
+ 28c:	8e 7f       	andi	r24, 0xFE	; 254
+ 28e:	85 bf       	out	0x35, r24	; 53
+ 290:	85 b7       	in	r24, 0x35	; 53
+ 292:	82 60       	ori	r24, 0x02	; 2
+ 294:	85 bf       	out	0x35, r24	; 53
+	STD_RET RetVal = E_NOK;
+
+	switch(pin)
+	{
+		case EXTI_INT0:
+			RetVal = E_OK;
+ 296:	81 e0       	ldi	r24, 0x01	; 1
+			switch (sense)
+			{
+				case LOW_LEVEL:    CLR_BIT(*MCUCR, ISC00); CLR_BIT(*MCUCR, ISC01); break;
+				case ON_CHANGE:    SET_BIT(*MCUCR, ISC00); CLR_BIT(*MCUCR, ISC01); break;
+				case FALLING_EDGE: CLR_BIT(*MCUCR, ISC00); SET_BIT(*MCUCR, ISC01); break;
+ 298:	08 95       	ret
+				case RISING_EDGE:  SET_BIT(*MCUCR, ISC00); SET_BIT(*MCUCR, ISC01); break;
+ 29a:	85 b7       	in	r24, 0x35	; 53
+ 29c:	81 60       	ori	r24, 0x01	; 1
+ 29e:	85 bf       	out	0x35, r24	; 53
+ 2a0:	85 b7       	in	r24, 0x35	; 53
+ 2a2:	82 60       	ori	r24, 0x02	; 2
+ 2a4:	85 bf       	out	0x35, r24	; 53
+	STD_RET RetVal = E_NOK;
+
+	switch(pin)
+	{
+		case EXTI_INT0:
+			RetVal = E_OK;
+ 2a6:	81 e0       	ldi	r24, 0x01	; 1
+			switch (sense)
+			{
+				case LOW_LEVEL:    CLR_BIT(*MCUCR, ISC00); CLR_BIT(*MCUCR, ISC01); break;
+				case ON_CHANGE:    SET_BIT(*MCUCR, ISC00); CLR_BIT(*MCUCR, ISC01); break;
+				case FALLING_EDGE: CLR_BIT(*MCUCR, ISC00); SET_BIT(*MCUCR, ISC01); break;
+				case RISING_EDGE:  SET_BIT(*MCUCR, ISC00); SET_BIT(*MCUCR, ISC01); break;
+ 2a8:	08 95       	ret
+				default: RetVal = E_NOK;
+			}
+			break;
+		case EXTI_INT1:
+			RetVal = E_OK;
+			switch (sense)
+ 2aa:	61 30       	cpi	r22, 0x01	; 1
+ 2ac:	71 f0       	breq	.+28     	; 0x2ca <EXTI_Sense_Def+0x7e>
+ 2ae:	28 f0       	brcs	.+10     	; 0x2ba <EXTI_Sense_Def+0x6e>
+ 2b0:	62 30       	cpi	r22, 0x02	; 2
+ 2b2:	99 f0       	breq	.+38     	; 0x2da <EXTI_Sense_Def+0x8e>
+ 2b4:	63 30       	cpi	r22, 0x03	; 3
+ 2b6:	c9 f0       	breq	.+50     	; 0x2ea <EXTI_Sense_Def+0x9e>
+ 2b8:	33 c0       	rjmp	.+102    	; 0x320 <EXTI_Sense_Def+0xd4>
+			{
+				case LOW_LEVEL:    CLR_BIT(*MCUCR, ISC10); CLR_BIT(*MCUCR, ISC11); break;
+ 2ba:	85 b7       	in	r24, 0x35	; 53
+ 2bc:	8b 7f       	andi	r24, 0xFB	; 251
+ 2be:	85 bf       	out	0x35, r24	; 53
+ 2c0:	85 b7       	in	r24, 0x35	; 53
+ 2c2:	87 7f       	andi	r24, 0xF7	; 247
+ 2c4:	85 bf       	out	0x35, r24	; 53
+				case RISING_EDGE:  SET_BIT(*MCUCR, ISC00); SET_BIT(*MCUCR, ISC01); break;
+				default: RetVal = E_NOK;
+			}
+			break;
+		case EXTI_INT1:
+			RetVal = E_OK;
+ 2c6:	81 e0       	ldi	r24, 0x01	; 1
+			switch (sense)
+			{
+				case LOW_LEVEL:    CLR_BIT(*MCUCR, ISC10); CLR_BIT(*MCUCR, ISC11); break;
+ 2c8:	08 95       	ret
+				case ON_CHANGE:    SET_BIT(*MCUCR, ISC10); CLR_BIT(*MCUCR, ISC11); break;
+ 2ca:	85 b7       	in	r24, 0x35	; 53
+ 2cc:	84 60       	ori	r24, 0x04	; 4
+ 2ce:	85 bf       	out	0x35, r24	; 53
+ 2d0:	85 b7       	in	r24, 0x35	; 53
+ 2d2:	87 7f       	andi	r24, 0xF7	; 247
+ 2d4:	85 bf       	out	0x35, r24	; 53
+				case RISING_EDGE:  SET_BIT(*MCUCR, ISC00); SET_BIT(*MCUCR, ISC01); break;
+				default: RetVal = E_NOK;
+			}
+			break;
+		case EXTI_INT1:
+			RetVal = E_OK;
+ 2d6:	81 e0       	ldi	r24, 0x01	; 1
+			switch (sense)
+			{
+				case LOW_LEVEL:    CLR_BIT(*MCUCR, ISC10); CLR_BIT(*MCUCR, ISC11); break;
+				case ON_CHANGE:    SET_BIT(*MCUCR, ISC10); CLR_BIT(*MCUCR, ISC11); break;
+ 2d8:	08 95       	ret
+				case FALLING_EDGE: CLR_BIT(*MCUCR, ISC10); SET_BIT(*MCUCR, ISC11); break;
+ 2da:	85 b7       	in	r24, 0x35	; 53
+ 2dc:	8b 7f       	andi	r24, 0xFB	; 251
+ 2de:	85 bf       	out	0x35, r24	; 53
+ 2e0:	85 b7       	in	r24, 0x35	; 53
+ 2e2:	88 60       	ori	r24, 0x08	; 8
+ 2e4:	85 bf       	out	0x35, r24	; 53
+				case RISING_EDGE:  SET_BIT(*MCUCR, ISC00); SET_BIT(*MCUCR, ISC01); break;
+				default: RetVal = E_NOK;
+			}
+			break;
+		case EXTI_INT1:
+			RetVal = E_OK;
+ 2e6:	81 e0       	ldi	r24, 0x01	; 1
+			switch (sense)
+			{
+				case LOW_LEVEL:    CLR_BIT(*MCUCR, ISC10); CLR_BIT(*MCUCR, ISC11); break;
+				case ON_CHANGE:    SET_BIT(*MCUCR, ISC10); CLR_BIT(*MCUCR, ISC11); break;
+				case FALLING_EDGE: CLR_BIT(*MCUCR, ISC10); SET_BIT(*MCUCR, ISC11); break;
+ 2e8:	08 95       	ret
+				case RISING_EDGE:  SET_BIT(*MCUCR, ISC10); SET_BIT(*MCUCR, ISC11); break;
+ 2ea:	85 b7       	in	r24, 0x35	; 53
+ 2ec:	84 60       	ori	r24, 0x04	; 4
+ 2ee:	85 bf       	out	0x35, r24	; 53
+ 2f0:	85 b7       	in	r24, 0x35	; 53
+ 2f2:	88 60       	ori	r24, 0x08	; 8
+ 2f4:	85 bf       	out	0x35, r24	; 53
+				case RISING_EDGE:  SET_BIT(*MCUCR, ISC00); SET_BIT(*MCUCR, ISC01); break;
+				default: RetVal = E_NOK;
+			}
+			break;
+		case EXTI_INT1:
+			RetVal = E_OK;
+ 2f6:	81 e0       	ldi	r24, 0x01	; 1
+			switch (sense)
+			{
+				case LOW_LEVEL:    CLR_BIT(*MCUCR, ISC10); CLR_BIT(*MCUCR, ISC11); break;
+				case ON_CHANGE:    SET_BIT(*MCUCR, ISC10); CLR_BIT(*MCUCR, ISC11); break;
+				case FALLING_EDGE: CLR_BIT(*MCUCR, ISC10); SET_BIT(*MCUCR, ISC11); break;
+				case RISING_EDGE:  SET_BIT(*MCUCR, ISC10); SET_BIT(*MCUCR, ISC11); break;
+ 2f8:	08 95       	ret
+			}
+			break;
+
+		case EXTI_INT2:
+			RetVal = E_OK;
+			switch (sense)
+ 2fa:	62 30       	cpi	r22, 0x02	; 2
+ 2fc:	19 f0       	breq	.+6      	; 0x304 <EXTI_Sense_Def+0xb8>
+ 2fe:	63 30       	cpi	r22, 0x03	; 3
+ 300:	31 f0       	breq	.+12     	; 0x30e <EXTI_Sense_Def+0xc2>
+ 302:	10 c0       	rjmp	.+32     	; 0x324 <EXTI_Sense_Def+0xd8>
+			{
+				case FALLING_EDGE: CLR_BIT(*MCUCSR, ISC2); break;
+ 304:	84 b7       	in	r24, 0x34	; 52
+ 306:	8f 7b       	andi	r24, 0xBF	; 191
+ 308:	84 bf       	out	0x34, r24	; 52
+				default: RetVal = E_NOK;
+			}
+			break;
+
+		case EXTI_INT2:
+			RetVal = E_OK;
+ 30a:	81 e0       	ldi	r24, 0x01	; 1
+			switch (sense)
+			{
+				case FALLING_EDGE: CLR_BIT(*MCUCSR, ISC2); break;
+ 30c:	08 95       	ret
+				case RISING_EDGE:  SET_BIT(*MCUCSR, ISC2); break;
+ 30e:	84 b7       	in	r24, 0x34	; 52
+ 310:	80 64       	ori	r24, 0x40	; 64
+ 312:	84 bf       	out	0x34, r24	; 52
+				default: RetVal = E_NOK;
+			}
+			break;
+
+		case EXTI_INT2:
+			RetVal = E_OK;
+ 314:	81 e0       	ldi	r24, 0x01	; 1
+			switch (sense)
+			{
+				case FALLING_EDGE: CLR_BIT(*MCUCSR, ISC2); break;
+				case RISING_EDGE:  SET_BIT(*MCUCSR, ISC2); break;
+ 316:	08 95       	ret
+				default: RetVal = E_NOK;
+			}
+			break;
+			
+		default: RetVal = E_NOK;
+ 318:	80 e0       	ldi	r24, 0x00	; 0
+ 31a:	08 95       	ret
+			{
+				case LOW_LEVEL:    CLR_BIT(*MCUCR, ISC00); CLR_BIT(*MCUCR, ISC01); break;
+				case ON_CHANGE:    SET_BIT(*MCUCR, ISC00); CLR_BIT(*MCUCR, ISC01); break;
+				case FALLING_EDGE: CLR_BIT(*MCUCR, ISC00); SET_BIT(*MCUCR, ISC01); break;
+				case RISING_EDGE:  SET_BIT(*MCUCR, ISC00); SET_BIT(*MCUCR, ISC01); break;
+				default: RetVal = E_NOK;
+ 31c:	80 e0       	ldi	r24, 0x00	; 0
+ 31e:	08 95       	ret
+			{
+				case LOW_LEVEL:    CLR_BIT(*MCUCR, ISC10); CLR_BIT(*MCUCR, ISC11); break;
+				case ON_CHANGE:    SET_BIT(*MCUCR, ISC10); CLR_BIT(*MCUCR, ISC11); break;
+				case FALLING_EDGE: CLR_BIT(*MCUCR, ISC10); SET_BIT(*MCUCR, ISC11); break;
+				case RISING_EDGE:  SET_BIT(*MCUCR, ISC10); SET_BIT(*MCUCR, ISC11); break;
+				default: RetVal = E_NOK;
+ 320:	80 e0       	ldi	r24, 0x00	; 0
+ 322:	08 95       	ret
+			RetVal = E_OK;
+			switch (sense)
+			{
+				case FALLING_EDGE: CLR_BIT(*MCUCSR, ISC2); break;
+				case RISING_EDGE:  SET_BIT(*MCUCSR, ISC2); break;
+				default: RetVal = E_NOK;
+ 324:	80 e0       	ldi	r24, 0x00	; 0
+			break;
+			
+		default: RetVal = E_NOK;
+	}
+	return RetVal;
+}
+ 326:	08 95       	ret
+
+Disassembly of section .text.Configure_EXTI_Pin:
+
+00000448 <Configure_EXTI_Pin>:
+// Function to configure the external interrupt pins
+static STD_RET Configure_EXTI_Pin(EXTI_INTx_t pin, Pin_Config* pin_t)
+{
+	STD_RET RetVal = E_NOK;
+
+	switch(pin)
+ 448:	81 30       	cpi	r24, 0x01	; 1
+ 44a:	89 f0       	breq	.+34     	; 0x46e <Configure_EXTI_Pin+0x26>
+ 44c:	18 f0       	brcs	.+6      	; 0x454 <Configure_EXTI_Pin+0xc>
+ 44e:	82 30       	cpi	r24, 0x02	; 2
+ 450:	d1 f0       	breq	.+52     	; 0x486 <Configure_EXTI_Pin+0x3e>
+ 452:	26 c0       	rjmp	.+76     	; 0x4a0 <Configure_EXTI_Pin+0x58>
+	{
+		case EXTI_INT0:
+			pin_t->port = GPIO_PORTD;
+ 454:	83 e0       	ldi	r24, 0x03	; 3
+ 456:	fb 01       	movw	r30, r22
+ 458:	81 83       	std	Z+1, r24	; 0x01
+			pin_t->pin = GPIO_PIN2;
+ 45a:	82 e0       	ldi	r24, 0x02	; 2
+ 45c:	80 83       	st	Z, r24
+			EXTI_INT0_ENABLE();
+ 45e:	8b b7       	in	r24, 0x3b	; 59
+ 460:	80 64       	ori	r24, 0x40	; 64
+ 462:	8b bf       	out	0x3b, r24	; 59
+			EXTI_INT0_CLR_FLAG();
+ 464:	8a b7       	in	r24, 0x3a	; 58
+ 466:	80 64       	ori	r24, 0x40	; 64
+ 468:	8a bf       	out	0x3a, r24	; 58
+			RetVal = E_OK;
+ 46a:	81 e0       	ldi	r24, 0x01	; 1
+			break;
+ 46c:	08 95       	ret
+
+		case EXTI_INT1:
+			pin_t->port = GPIO_PORTD;
+ 46e:	83 e0       	ldi	r24, 0x03	; 3
+ 470:	fb 01       	movw	r30, r22
+ 472:	81 83       	std	Z+1, r24	; 0x01
+			pin_t->pin = GPIO_PIN3;
+ 474:	80 83       	st	Z, r24
+			EXTI_INT1_ENABLE();
+ 476:	8b b7       	in	r24, 0x3b	; 59
+ 478:	80 68       	ori	r24, 0x80	; 128
+ 47a:	8b bf       	out	0x3b, r24	; 59
+			EXTI_INT1_CLR_FLAG();
+ 47c:	8a b7       	in	r24, 0x3a	; 58
+ 47e:	80 68       	ori	r24, 0x80	; 128
+ 480:	8a bf       	out	0x3a, r24	; 58
+			RetVal = E_OK;
+ 482:	81 e0       	ldi	r24, 0x01	; 1
+			break;
+ 484:	08 95       	ret
+
+		case EXTI_INT2:
+			pin_t->port = GPIO_PORTB;
+ 486:	81 e0       	ldi	r24, 0x01	; 1
+ 488:	fb 01       	movw	r30, r22
+ 48a:	81 83       	std	Z+1, r24	; 0x01
+			pin_t->pin = GPIO_PIN2;
+ 48c:	82 e0       	ldi	r24, 0x02	; 2
+ 48e:	80 83       	st	Z, r24
+			EXTI_INT2_ENABLE();
+ 490:	8b b7       	in	r24, 0x3b	; 59
+ 492:	80 62       	ori	r24, 0x20	; 32
+ 494:	8b bf       	out	0x3b, r24	; 59
+			EXTI_INT2_CLR_FLAG();
+ 496:	8a b7       	in	r24, 0x3a	; 58
+ 498:	80 62       	ori	r24, 0x20	; 32
+ 49a:	8a bf       	out	0x3a, r24	; 58
+			RetVal = E_OK;
+ 49c:	81 e0       	ldi	r24, 0x01	; 1
+			break;
+ 49e:	08 95       	ret
+
+		default:
+			RetVal = E_NOK; // Handle invalid pin case
+ 4a0:	80 e0       	ldi	r24, 0x00	; 0
+			break;
+	}
+
+	return RetVal;
+}
+ 4a2:	08 95       	ret
+
+Disassembly of section .text.EXTI_Init:
+
+000003cc <EXTI_Init>:
+
+// ***************************************************************
+// ***************************** APIs ****************************
+// ***************************************************************
+STD_RET EXTI_Init(EXTI_t *obj)
+{
+ 3cc:	0f 93       	push	r16
+ 3ce:	1f 93       	push	r17
+ 3d0:	cf 93       	push	r28
+ 3d2:	df 93       	push	r29
+ 3d4:	00 d0       	rcall	.+0      	; 0x3d6 <EXTI_Init+0xa>
+ 3d6:	00 d0       	rcall	.+0      	; 0x3d8 <EXTI_Init+0xc>
+ 3d8:	cd b7       	in	r28, 0x3d	; 61
+ 3da:	de b7       	in	r29, 0x3e	; 62
+	STD_RET RetVal = E_NOK;
+
+	if (NULL == obj)
+ 3dc:	00 97       	sbiw	r24, 0x00	; 0
+ 3de:	51 f1       	breq	.+84     	; 0x434 <__EEPROM_REGION_LENGTH__+0x34>
+ 3e0:	8c 01       	movw	r16, r24
+		RetVal = E_NULL_PTR;
+	}
+	else
+	{
+		Pin_Config pin_t;
+		pin_t.direction = GPIO_INPUT;
+ 3e2:	1b 82       	std	Y+3, r1	; 0x03
+
+		// Configure the external interrupt pin
+		RetVal = Configure_EXTI_Pin(obj->pin, &pin_t);
+ 3e4:	be 01       	movw	r22, r28
+ 3e6:	6f 5f       	subi	r22, 0xFF	; 255
+ 3e8:	7f 4f       	sbci	r23, 0xFF	; 255
+ 3ea:	dc 01       	movw	r26, r24
+ 3ec:	12 96       	adiw	r26, 0x02	; 2
+ 3ee:	8c 91       	ld	r24, X
+ 3f0:	0e 94 24 02 	call	0x448	; 0x448 <Configure_EXTI_Pin>
+		if (RetVal == E_OK)
+ 3f4:	81 30       	cpi	r24, 0x01	; 1
+ 3f6:	f9 f4       	brne	.+62     	; 0x436 <__EEPROM_REGION_LENGTH__+0x36>
+		{
+			// Initialize the GPIO pin for external interrupt
+			GPIO_Pin_Init(&pin_t);
+ 3f8:	be 01       	movw	r22, r28
+ 3fa:	6f 5f       	subi	r22, 0xFF	; 255
+ 3fc:	7f 4f       	sbci	r23, 0xFF	; 255
+ 3fe:	80 e8       	ldi	r24, 0x80	; 128
+ 400:	0e 94 5e 00 	call	0xbc	; 0xbc <__data_load_end>
+
+			// Set the sense control for the interrupt
+			RetVal = EXTI_Sense_Def(obj->pin, obj->sense);
+ 404:	f8 01       	movw	r30, r16
+ 406:	63 81       	ldd	r22, Z+3	; 0x03
+ 408:	82 81       	ldd	r24, Z+2	; 0x02
+ 40a:	0e 94 26 01 	call	0x24c	; 0x24c <EXTI_Sense_Def>
+
+			// Assign the user-provided interrupt handler
+			if (RetVal == E_OK)
+ 40e:	81 30       	cpi	r24, 0x01	; 1
+ 410:	91 f4       	brne	.+36     	; 0x436 <__EEPROM_REGION_LENGTH__+0x36>
+			{
+				EXTI_Fun[obj->pin] = obj->EXT_InterruptHandler;
+ 412:	d8 01       	movw	r26, r16
+ 414:	12 96       	adiw	r26, 0x02	; 2
+ 416:	ec 91       	ld	r30, X
+ 418:	12 97       	sbiw	r26, 0x02	; 2
+ 41a:	f0 e0       	ldi	r31, 0x00	; 0
+ 41c:	2d 91       	ld	r18, X+
+ 41e:	3c 91       	ld	r19, X
+ 420:	ee 0f       	add	r30, r30
+ 422:	ff 1f       	adc	r31, r31
+ 424:	e0 59       	subi	r30, 0x90	; 144
+ 426:	ff 4f       	sbci	r31, 0xFF	; 255
+ 428:	31 83       	std	Z+1, r19	; 0x01
+ 42a:	20 83       	st	Z, r18
+				GLOBAL_INTERRUPT_ENABLE();
+ 42c:	9f b7       	in	r25, 0x3f	; 63
+ 42e:	90 68       	ori	r25, 0x80	; 128
+ 430:	9f bf       	out	0x3f, r25	; 63
+ 432:	01 c0       	rjmp	.+2      	; 0x436 <__EEPROM_REGION_LENGTH__+0x36>
+{
+	STD_RET RetVal = E_NOK;
+
+	if (NULL == obj)
+	{
+		RetVal = E_NULL_PTR;
+ 434:	82 e0       	ldi	r24, 0x02	; 2
+			}
+		}
+	}
+
+	return RetVal;
+}
+ 436:	0f 90       	pop	r0
+ 438:	0f 90       	pop	r0
+ 43a:	0f 90       	pop	r0
+ 43c:	0f 90       	pop	r0
+ 43e:	df 91       	pop	r29
+ 440:	cf 91       	pop	r28
+ 442:	1f 91       	pop	r17
+ 444:	0f 91       	pop	r16
+ 446:	08 95       	ret
+
+Disassembly of section .text.__vector_1:
+
+000004a4 <__vector_1>:
+
+// ***************************************************************
+// ************************* ISR Handlers ************************
+// ***************************************************************
+void __vector_1(void)
+{
+ 4a4:	1f 92       	push	r1
+ 4a6:	0f 92       	push	r0
+ 4a8:	0f b6       	in	r0, 0x3f	; 63
+ 4aa:	0f 92       	push	r0
+ 4ac:	11 24       	eor	r1, r1
+ 4ae:	2f 93       	push	r18
+ 4b0:	3f 93       	push	r19
+ 4b2:	4f 93       	push	r20
+ 4b4:	5f 93       	push	r21
+ 4b6:	6f 93       	push	r22
+ 4b8:	7f 93       	push	r23
+ 4ba:	8f 93       	push	r24
+ 4bc:	9f 93       	push	r25
+ 4be:	af 93       	push	r26
+ 4c0:	bf 93       	push	r27
+ 4c2:	ef 93       	push	r30
+ 4c4:	ff 93       	push	r31
+	if (EXTI_Fun[EXTI_INT0] != NULL)
+ 4c6:	e0 91 70 00 	lds	r30, 0x0070	; 0x800070 <EXTI_Fun>
+ 4ca:	f0 91 71 00 	lds	r31, 0x0071	; 0x800071 <EXTI_Fun+0x1>
+ 4ce:	30 97       	sbiw	r30, 0x00	; 0
+ 4d0:	09 f0       	breq	.+2      	; 0x4d4 <__vector_1+0x30>
+	{
+		EXTI_Fun[EXTI_INT0]();
+ 4d2:	09 95       	icall
+	}
+}
+ 4d4:	ff 91       	pop	r31
+ 4d6:	ef 91       	pop	r30
+ 4d8:	bf 91       	pop	r27
+ 4da:	af 91       	pop	r26
+ 4dc:	9f 91       	pop	r25
+ 4de:	8f 91       	pop	r24
+ 4e0:	7f 91       	pop	r23
+ 4e2:	6f 91       	pop	r22
+ 4e4:	5f 91       	pop	r21
+ 4e6:	4f 91       	pop	r20
+ 4e8:	3f 91       	pop	r19
+ 4ea:	2f 91       	pop	r18
+ 4ec:	0f 90       	pop	r0
+ 4ee:	0f be       	out	0x3f, r0	; 63
+ 4f0:	0f 90       	pop	r0
+ 4f2:	1f 90       	pop	r1
+ 4f4:	18 95       	reti
+
+Disassembly of section .text.__vector_2:
+
+000004f6 <__vector_2>:
+
+void __vector_2(void)
+{
+ 4f6:	1f 92       	push	r1
+ 4f8:	0f 92       	push	r0
+ 4fa:	0f b6       	in	r0, 0x3f	; 63
+ 4fc:	0f 92       	push	r0
+ 4fe:	11 24       	eor	r1, r1
+ 500:	2f 93       	push	r18
+ 502:	3f 93       	push	r19
+ 504:	4f 93       	push	r20
+ 506:	5f 93       	push	r21
+ 508:	6f 93       	push	r22
+ 50a:	7f 93       	push	r23
+ 50c:	8f 93       	push	r24
+ 50e:	9f 93       	push	r25
+ 510:	af 93       	push	r26
+ 512:	bf 93       	push	r27
+ 514:	ef 93       	push	r30
+ 516:	ff 93       	push	r31
+	if (EXTI_Fun[EXTI_INT1] != NULL)
+ 518:	e0 91 72 00 	lds	r30, 0x0072	; 0x800072 <EXTI_Fun+0x2>
+ 51c:	f0 91 73 00 	lds	r31, 0x0073	; 0x800073 <EXTI_Fun+0x3>
+ 520:	30 97       	sbiw	r30, 0x00	; 0
+ 522:	09 f0       	breq	.+2      	; 0x526 <__vector_2+0x30>
+	{
+		EXTI_Fun[EXTI_INT1]();
+ 524:	09 95       	icall
+	}
+}
+ 526:	ff 91       	pop	r31
+ 528:	ef 91       	pop	r30
+ 52a:	bf 91       	pop	r27
+ 52c:	af 91       	pop	r26
+ 52e:	9f 91       	pop	r25
+ 530:	8f 91       	pop	r24
+ 532:	7f 91       	pop	r23
+ 534:	6f 91       	pop	r22
+ 536:	5f 91       	pop	r21
+ 538:	4f 91       	pop	r20
+ 53a:	3f 91       	pop	r19
+ 53c:	2f 91       	pop	r18
+ 53e:	0f 90       	pop	r0
+ 540:	0f be       	out	0x3f, r0	; 63
+ 542:	0f 90       	pop	r0
+ 544:	1f 90       	pop	r1
+ 546:	18 95       	reti
+
+Disassembly of section .text.__vector_3:
+
+00000548 <__vector_3>:
+
+void __vector_3(void)
+{
+ 548:	1f 92       	push	r1
+ 54a:	0f 92       	push	r0
+ 54c:	0f b6       	in	r0, 0x3f	; 63
+ 54e:	0f 92       	push	r0
+ 550:	11 24       	eor	r1, r1
+ 552:	2f 93       	push	r18
+ 554:	3f 93       	push	r19
+ 556:	4f 93       	push	r20
+ 558:	5f 93       	push	r21
+ 55a:	6f 93       	push	r22
+ 55c:	7f 93       	push	r23
+ 55e:	8f 93       	push	r24
+ 560:	9f 93       	push	r25
+ 562:	af 93       	push	r26
+ 564:	bf 93       	push	r27
+ 566:	ef 93       	push	r30
+ 568:	ff 93       	push	r31
+	if (EXTI_Fun[EXTI_INT2] != NULL)
+ 56a:	e0 91 74 00 	lds	r30, 0x0074	; 0x800074 <EXTI_Fun+0x4>
+ 56e:	f0 91 75 00 	lds	r31, 0x0075	; 0x800075 <EXTI_Fun+0x5>
+ 572:	30 97       	sbiw	r30, 0x00	; 0
+ 574:	09 f0       	breq	.+2      	; 0x578 <__vector_3+0x30>
+	{
+		EXTI_Fun[EXTI_INT2]();
+ 576:	09 95       	icall
+	}
+}
+ 578:	ff 91       	pop	r31
+ 57a:	ef 91       	pop	r30
+ 57c:	bf 91       	pop	r27
+ 57e:	af 91       	pop	r26
+ 580:	9f 91       	pop	r25
+ 582:	8f 91       	pop	r24
+ 584:	7f 91       	pop	r23
+ 586:	6f 91       	pop	r22
+ 588:	5f 91       	pop	r21
+ 58a:	4f 91       	pop	r20
+ 58c:	3f 91       	pop	r19
+ 58e:	2f 91       	pop	r18
+ 590:	0f 90       	pop	r0
+ 592:	0f be       	out	0x3f, r0	; 63
+ 594:	0f 90       	pop	r0
+ 596:	1f 90       	pop	r1
+ 598:	18 95       	reti
+
+Disassembly of section .text.__dummy_fini:
+
+00000628 <_fini>:
+ 628:	08 95       	ret
+
+Disassembly of section .text.__dummy_funcs_on_exit:
+
+0000062a <__funcs_on_exit>:
+ 62a:	08 95       	ret
+
+Disassembly of section .text.__dummy_simulator_exit:
+
+0000062c <__simulator_exit>:
+ 62c:	08 95       	ret
+
+Disassembly of section .text.exit:
+
+000005ea <exit>:
+ 5ea:	ec 01       	movw	r28, r24
+ 5ec:	0e 94 15 03 	call	0x62a	; 0x62a <__funcs_on_exit>
+ 5f0:	0e 94 14 03 	call	0x628	; 0x628 <_fini>
+ 5f4:	ce 01       	movw	r24, r28
+ 5f6:	0e 94 16 03 	call	0x62c	; 0x62c <__simulator_exit>
+ 5fa:	ce 01       	movw	r24, r28
+ 5fc:	0e 94 12 03 	call	0x624	; 0x624 <_Exit>
+
+Disassembly of section .text._Exit:
+
+00000624 <_Exit>:
+ 624:	0e 94 5c 00 	call	0xb8	; 0xb8 <_exit>
